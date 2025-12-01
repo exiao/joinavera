@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avera | Boutique M&A Advisory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap');
+      
+      .font-serif { font-family: 'Instrument Serif', serif; }
+      .font-sans { font-family: 'Inter', sans-serif; }
+      
+      body { cursor: default; }
+      
+      .hover-reveal {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      .group:hover .hover-reveal {
+        opacity: 1;
+      }
+      
+      .fade-in {
+        animation: fadeIn 1.2s ease-out forwards;
+        opacity: 0;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+</head>
+<body class="bg-white text-black font-sans selection:bg-black selection:text-white">
+
+    <!-- Minimal Nav -->
+    <nav class="fixed top-0 w-full z-50 mix-blend-difference text-white">
+        <div class="max-w-[1800px] mx-auto px-8 py-8 flex justify-between items-center">
+            <div class="text-2xl font-serif tracking-wide">Avera.</div>
+            <div class="text-sm uppercase tracking-widest cursor-pointer hover:opacity-70 transition-opacity">Menu</div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative">
+        <div class="max-w-5xl fade-in">
+            <h1 class="text-[12vw] md:text-[10vw] leading-[0.8] font-serif font-normal tracking-tighter">
+                WHERE <br> GROWTH <br> MEETS <br> <span class="italic text-gray-400">EXECUTION.</span>
+            </h1>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="arrow-down" class="w-6 h-6 text-gray-400"></i>
+        </div>
+    </section>
+
+    <!-- Index / Services -->
+    <section class="py-12 px-8 max-w-[1800px] mx-auto">
+        <div class="mb-16 flex justify-between items-end border-b border-black pb-4">
+            <h2 class="text-sm uppercase tracking-widest text-gray-500">The Index</h2>
+            <div class="text-sm uppercase tracking-widest text-gray-500">01 — 03</div>
+        </div>
+
+        <div class="space-y-0">
+            <!-- Item 01 -->
+            <div class="group border-b border-gray-200 py-12 flex flex-col md:flex-row justify-between items-baseline hover:bg-gray-50 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="md:w-1/3 text-sm text-gray-400 mb-4 md:mb-0 font-mono">01</div>
+                <div class="md:w-2/3">
+                    <h3 class="text-4xl md:text-6xl font-serif mb-4 group-hover:translate-x-4 transition-transform duration-500">Corporate Development</h3>
+                    <p class="max-w-md text-gray-500 font-light hidden md:block hover-reveal h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
+                        Full-stack deal execution for companies without a dedicated team. Strategy, sourcing, diligence, and closing.
+                    </p>
+                </div>
+                <div class="hidden md:block opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="arrow-up-right" class="w-8 h-8"></i>
+                </div>
+            </div>
+
+            <!-- Item 02 -->
+            <div class="group border-b border-gray-200 py-12 flex flex-col md:flex-row justify-between items-baseline hover:bg-gray-50 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="md:w-1/3 text-sm text-gray-400 mb-4 md:mb-0 font-mono">02</div>
+                <div class="md:w-2/3">
+                    <h3 class="text-4xl md:text-6xl font-serif mb-4 group-hover:translate-x-4 transition-transform duration-500">Strategic Partnerships</h3>
+                    <p class="max-w-md text-gray-500 font-light hidden md:block hover-reveal h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
+                        Designing and negotiating high-impact commercial agreements that open new markets and revenue streams.
+                    </p>
+                </div>
+                <div class="hidden md:block opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="arrow-up-right" class="w-8 h-8"></i>
+                </div>
+            </div>
+
+            <!-- Item 03 -->
+            <div class="group border-b border-gray-200 py-12 flex flex-col md:flex-row justify-between items-baseline hover:bg-gray-50 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="md:w-1/3 text-sm text-gray-400 mb-4 md:mb-0 font-mono">03</div>
+                <div class="md:w-2/3">
+                    <h3 class="text-4xl md:text-6xl font-serif mb-4 group-hover:translate-x-4 transition-transform duration-500">Venture Investing</h3>
+                    <p class="max-w-md text-gray-500 font-light hidden md:block hover-reveal h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
+                        Building corporate venture capital programs. Thesis creation, pipeline development, and investment committee management.
+                    </p>
+                </div>
+                <div class="hidden md:block opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="arrow-up-right" class="w-8 h-8"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statement -->
+    <section class="py-40 px-8 text-center bg-black text-white">
+        <p class="text-2xl md:text-4xl font-serif leading-relaxed max-w-4xl mx-auto">
+            "We don't deliver slides. We deliver deals. <br>
+            <span class="text-gray-500 italic">Precision execution for the world's most ambitious founders.</span>"
+        </p>
+        <div class="mt-16">
+            <a href="mailto:hello@joinavera.com" class="inline-block border border-white/20 px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all uppercase text-sm tracking-widest">
+                Start a Conversation
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-xs uppercase tracking-widest text-gray-400">
+        &copy; 2024 Avera. New York.
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

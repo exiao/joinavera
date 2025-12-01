@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avera | Swiss Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&display=swap');
+      .font-serif { font-family: 'Instrument Serif', serif; }
+      .font-sans { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-black font-sans selection:bg-black selection:text-white">
+
+    <!-- Grid Container -->
+    <div class="min-h-screen border-x border-black max-w-7xl mx-auto flex flex-col">
+        
+        <!-- Row 1: Nav -->
+        <div class="grid grid-cols-12 border-b border-black">
+            <div class="col-span-6 p-4 border-r border-black text-xl font-bold tracking-tighter uppercase">Avera.</div>
+            <div class="col-span-4 p-4 border-r border-black text-xs uppercase tracking-widest flex items-center">New York, NY</div>
+            <div class="col-span-2 p-4 text-xs uppercase tracking-widest flex items-center justify-center cursor-pointer hover:bg-black hover:text-white transition-colors">Menu</div>
+        </div>
+
+        <!-- Row 2: Hero -->
+        <div class="grid grid-cols-12 border-b border-black flex-grow">
+            <div class="col-span-12 md:col-span-8 p-8 md:p-16 border-r border-black flex flex-col justify-center">
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.85] uppercase">
+                    Your next deal lead
+                </h1>
+                <p class="mt-6 text-xl md:text-2xl text-gray-600 max-w-xl">
+                    We bring operator experience to your most critical deals.
+                </p>
+            </div>
+            <div class="hidden md:flex md:col-span-4 bg-gray-100">
+                <!-- Empty space or Image placeholder -->
+            </div>
+        </div>
+
+        <!-- Row 3: Statement -->
+        <div class="grid grid-cols-12 border-b border-black">
+            <div class="col-span-12 p-8 md:p-12">
+                <p class="text-2xl md:text-3xl leading-tight font-serif max-w-4xl">
+                    "Most advisories stop at the slide deck. We stay for the hard part: getting the deal done."
+                </p>
+            </div>
+        </div>
+
+        <!-- Row 4: Services -->
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black border-b border-black">
+            <!-- 01 -->
+            <div class="p-8 hover:bg-black hover:text-white transition-colors group h-64 flex flex-col justify-between">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-mono">01</span>
+                    <i data-lucide="arrow-up-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Corporate Development</h3>
+                    <p class="text-xs opacity-60 max-w-[200px]">Full-stack deal execution for companies without a dedicated team. Strategy, sourcing, diligence, and closing.</p>
+                </div>
+            </div>
+            <!-- 02 -->
+            <div class="p-8 hover:bg-black hover:text-white transition-colors group h-64 flex flex-col justify-between">
+                 <div class="flex justify-between items-start">
+                    <span class="text-xs font-mono">02</span>
+                    <i data-lucide="arrow-up-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Partnerships</h3>
+                    <p class="text-xs opacity-60 max-w-[200px]">Commercial Agreements, Distribution, Ecosystems.</p>
+                </div>
+            </div>
+            <!-- 03 -->
+            <div class="p-8 hover:bg-black hover:text-white transition-colors group h-64 flex flex-col justify-between">
+                 <div class="flex justify-between items-start">
+                    <span class="text-xs font-mono">03</span>
+                    <i data-lucide="arrow-up-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Company Integration</h3>
+                    <p class="text-xs opacity-60 max-w-[200px]">Post-merger success, project management, cultural alignment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 5: Footer CTA -->
+        <div class="grid grid-cols-12">
+            <div class="col-span-8 p-6 border-r border-black text-sm uppercase tracking-widest">
+                &copy; 2024 Avera Advisory
+            </div>
+            <a href="mailto:hello@joinavera.com" class="col-span-4 p-6 text-sm uppercase tracking-widest bg-black text-white hover:bg-white hover:text-black transition-colors text-center flex items-center justify-center">
+                Start Project
+            </a>
+        </div>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
