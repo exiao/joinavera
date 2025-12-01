@@ -23,8 +23,18 @@
 - **Fonts**: Google Fonts (Instrument Serif, Inter).
 
 ## Build & Run
+- **Main Entry Point**: `index.html` (currently a copy of `variant-2d-track-record.html`).
 - No build process required.
-- Open `generated-page.html` (or variants) directly in a web browser to view the site.
+- Open `index.html` directly in a web browser to view the site.
+
+## Deployment
+- **Platform**: Render (Static Site).
+- **Service Name**: `avera-jakarta`.
+- **Branch**: `jakarta-v1`.
+- **Workflow**:
+  1. `index.html` is the production file. If modifying a variant, copy it to `index.html` before deploying.
+  2. Commit and push changes to the `jakarta-v1` branch.
+  3. Render will automatically deploy the static site.
 
 ## Code Style
 - **Indentation**: 2 spaces.
