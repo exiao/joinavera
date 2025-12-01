@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avera | Monogram</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap');
+      
+      .font-serif { font-family: 'Instrument Serif', serif; }
+      .font-sans { font-family: 'Inter', sans-serif; }
+
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+</head>
+<body class="bg-white text-black font-sans selection:bg-black selection:text-white overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 flex justify-between px-8 py-8 bg-white/90 backdrop-blur-sm">
+        <div class="text-sm uppercase tracking-widest">Menu</div>
+        <div class="text-sm uppercase tracking-widest">Contact</div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="h-screen flex flex-col justify-center items-center relative">
+        
+        <!-- Massive Monogram -->
+        <div class="font-serif leading-none opacity-90 select-none pointer-events-none transform -translate-y-4 md:-translate-y-8 text-black flex items-center justify-center w-full px-4">
+            <span class="text-[120px] md:text-[150px] lg:text-[180px]">A</span>
+        </div>
+
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-16 md:mt-24 tracking-[0.5em] text-xs md:text-sm uppercase bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 whitespace-nowrap">
+            Your Deal Lead, On Demand
+        </div>
+
+        <div class="absolute bottom-12 text-xs uppercase tracking-widest animate-bounce">
+            Scroll
+        </div>
+    </section>
+
+    <!-- Horizontal Scroll Index -->
+    <section class="py-32 border-t border-black">
+        <div class="px-8 mb-16">
+            <h2 class="text-sm uppercase tracking-widest text-gray-500">Services</h2>
+        </div>
+
+        <!-- Horizontal Scroll Container -->
+        <div class="flex overflow-x-auto no-scrollbar px-8 gap-16 pb-12">
+            
+            <!-- Card 1 -->
+            <div class="min-w-[300px] md:min-w-[400px] group cursor-pointer">
+                <div class="text-xs font-mono text-gray-400 mb-4">01</div>
+                <h3 class="text-4xl font-serif mb-6 group-hover:italic transition-all">Corporate Development</h3>
+                <div class="w-full h-[1px] bg-gray-200 mb-6 group-hover:bg-black transition-colors"></div>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Full-stack deal execution for companies without a dedicated team. Strategy, sourcing, diligence, and closing.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="min-w-[300px] md:min-w-[400px] group cursor-pointer">
+                <div class="text-xs font-mono text-gray-400 mb-4">02</div>
+                <h3 class="text-4xl font-serif mb-6 group-hover:italic transition-all">Partnerships</h3>
+                <div class="w-full h-[1px] bg-gray-200 mb-6 group-hover:bg-black transition-colors"></div>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Source, structure, and scale revenue. We handle landscape mapping to signed LOIs for partnerships and M&A.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="min-w-[300px] md:min-w-[400px] group cursor-pointer">
+                <div class="text-xs font-mono text-gray-400 mb-4">03</div>
+                <h3 class="text-4xl font-serif mb-6 group-hover:italic transition-all">Company Integration</h3>
+                <div class="w-full h-[1px] bg-gray-200 mb-6 group-hover:bg-black transition-colors"></div>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Post-merger success. Ensuring value realization through rigorous project management and cultural alignment.
+                </p>
+            </div>
+
+            <!-- Spacer -->
+            <div class="min-w-[100px]"></div>
+        </div>
+    </section>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
