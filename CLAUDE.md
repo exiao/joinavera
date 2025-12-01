@@ -45,3 +45,13 @@
   - Maintain semantic structure (`nav`, `section`, `footer`).
   - Lucide icons are initialized via `lucide.createIcons()` at the end of the body.
   - Use `.fade-up` class on sections for scroll reveal animations.
+
+## Design System: "Editorial Split" (Variant 2B)
+This variant was developed to bridge the gap between "High-End Boutique" aesthetics and "Founder-Led" trust.
+- **Layout**: 50/50 Split View. The left side is fixed (sticky) containing the Brand Promise ("Your Deal Lead") and high-level CTA. The right side scrolls, containing the detailed "Services" (The Index).
+- **Typography**: 
+  - **Instrument Serif**: For headlines ("Corp Dev", "Partnerships"). Used large to convey authority.
+  - **Inter**: For body copy and UI elements ("Menu", "01/"). Used small, uppercase, and widely tracked for precision.
+- **Philosophy**: 
+  - **"Show, don't yell"**: Instead of a long sales page, it presents services as a curated menu.
+  - **Navigation**: Simplified to essentials. The user is guided linearly through the services on the right while the core value prop remains visible on the left.
