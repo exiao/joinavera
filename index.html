@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avera | M&A Advisory - Corporate Development & Partnerships</title>
+    <title>Avera | M&A Advisory</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Avera provides senior-level M&A expertise to help companies kickstart their corporate development programs. Partnerships, deal execution, and post-merger integration.">
@@ -59,6 +59,21 @@
       html { font-size: 12px; }
       .font-serif { font-family: 'Instrument Serif', serif; }
       .font-sans { font-family: 'Inter', sans-serif; }
+
+      /* Scroll indicator */
+      .scroll-indicator {
+        opacity: 0.4;
+        transition: opacity 0.3s ease;
+        animation: float 2.5s ease-in-out infinite;
+      }
+      .scroll-indicator.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(4px); }
+      }
     </style>
 </head>
 <body class="bg-white text-black font-sans selection:bg-black selection:text-white h-screen overflow-hidden">
@@ -89,7 +104,13 @@
         </header>
 
         <!-- Right Panel (Scrollable) -->
-        <article class="w-full lg:w-1/2 h-1/2 lg:h-full overflow-y-auto p-8 lg:p-16 bg-gray-50">
+        <article id="scroll-panel" class="w-full lg:w-1/2 h-1/2 lg:h-full overflow-y-auto p-8 lg:p-16 bg-gray-50 relative">
+
+            <!-- Scroll Indicator -->
+            <div id="scroll-indicator" class="scroll-indicator fixed bottom-6 right-6 lg:right-[calc(25%-12px)] flex flex-col items-center text-gray-400">
+                <span class="text-[9px] uppercase tracking-widest mb-1">Scroll</span>
+                <i data-lucide="chevron-down" class="w-4 h-4" aria-hidden="true"></i>
+            </div>
             
             <!-- Services Section -->
             <section aria-labelledby="services-heading">
@@ -213,6 +234,20 @@
         </article>
     </main>
 
-    <script>lucide.createIcons();</script>
+    <script>
+      lucide.createIcons();
+
+      // Scroll indicator fade on scroll
+      const scrollPanel = document.getElementById('scroll-panel');
+      const scrollIndicator = document.getElementById('scroll-indicator');
+
+      scrollPanel.addEventListener('scroll', function() {
+        if (scrollPanel.scrollTop > 100) {
+          scrollIndicator.classList.add('hidden');
+        } else {
+          scrollIndicator.classList.remove('hidden');
+        }
+      });
+    </script>
 </body>
 </html>
