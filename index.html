@@ -77,20 +77,62 @@
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(4px); }
       }
+
+      /* Mobile header collapse */
+      @media (max-width: 1023px) {
+        .mobile-header {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          height: auto;
+          min-height: 0;
+        }
+
+        .header-collapsible {
+          max-height: 500px;
+          opacity: 1;
+          overflow: hidden;
+          transition: max-height 0.3s ease, opacity 0.2s ease, margin 0.3s ease, padding 0.3s ease;
+        }
+
+        .header-collapsed .header-collapsible {
+          max-height: 0;
+          opacity: 0;
+          margin: 0;
+          padding: 0;
+        }
+
+        .header-cta-mobile {
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .header-collapsed .header-cta-mobile {
+          opacity: 1;
+        }
+
+        .header-collapsed .header-cta-desktop {
+          display: none;
+        }
+      }
     </style>
 </head>
 <body class="bg-white text-black font-sans selection:bg-black selection:text-white h-screen overflow-hidden">
 
     <main class="flex flex-col lg:flex-row h-full">
 
-        <!-- Left Panel (Fixed) -->
-        <header class="w-full lg:w-1/2 h-1/2 lg:h-full p-8 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-black relative bg-white" role="banner">
-            <div>
-                <div class="text-2xl font-serif tracking-wide mb-2">Avera.</div>
-                <div class="text-[10px] uppercase tracking-widest text-gray-500">Est. 2025 — New York</div>
+        <!-- Left Panel (Fixed on desktop, collapsible on mobile) -->
+        <header class="mobile-header w-full lg:w-1/2 h-auto lg:h-full p-8 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-black relative bg-white" role="banner">
+            <!-- Persistent row (always visible) -->
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-serif tracking-wide">Avera.</div>
+                <a href="mailto:hello@joinavera.com" class="header-cta-mobile lg:hidden inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:gap-4 transition-all" aria-label="Contact Avera via email">
+                    Get in Touch <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+                </a>
             </div>
 
-            <div class="my-auto">
+            <!-- Collapsible content (hidden on scroll on mobile) -->
+            <div class="header-collapsible my-auto py-8 lg:py-0">
                 <h1 class="text-6xl lg:text-8xl font-serif leading-[0.9] tracking-tight">
                     <span class="text-gray-400">Your next</span> deal lead
                 </h1>
@@ -99,7 +141,8 @@
                 </p>
             </div>
 
-            <nav aria-label="Primary contact">
+            <!-- Desktop-only CTA -->
+            <nav class="header-cta-desktop hidden lg:block" aria-label="Primary contact">
                 <a href="mailto:hello@joinavera.com" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:gap-4 transition-all" aria-label="Contact Avera via email">
                     Get in Touch <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
                 </a>
@@ -107,7 +150,7 @@
         </header>
 
         <!-- Right Panel (Scrollable) -->
-        <article id="scroll-panel" class="w-full lg:w-1/2 h-1/2 lg:h-full overflow-y-auto p-8 lg:p-16 bg-gray-50 relative">
+        <article id="scroll-panel" class="w-full lg:w-1/2 flex-1 lg:h-full overflow-y-auto p-8 lg:p-16 bg-gray-50 relative">
 
             <!-- Scroll Indicator -->
             <div id="scroll-indicator" class="scroll-indicator fixed bottom-6 right-6 lg:right-[calc(25%-12px)] flex flex-col items-center text-gray-400">
@@ -240,17 +283,35 @@
     <script>
       lucide.createIcons();
 
-      // Scroll indicator fade on scroll
       const scrollPanel = document.getElementById('scroll-panel');
       const scrollIndicator = document.getElementById('scroll-indicator');
+      const header = document.querySelector('.mobile-header');
 
+      // Combined scroll handler for both panels
       scrollPanel.addEventListener('scroll', function() {
+        // Scroll indicator fade
         if (scrollPanel.scrollTop > 100) {
           scrollIndicator.classList.add('hidden');
         } else {
           scrollIndicator.classList.remove('hidden');
         }
-      });
+
+        // Mobile header collapse (only on mobile)
+        if (window.innerWidth < 1024) {
+          if (scrollPanel.scrollTop > 50) {
+            header.classList.add('header-collapsed');
+          } else {
+            header.classList.remove('header-collapsed');
+          }
+        }
+      }, { passive: true });
+
+      // Reset header state on resize (e.g., rotating device)
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 1024) {
+          header.classList.remove('header-collapsed');
+        }
+      }, { passive: true });
     </script>
 </body>
 </html>
